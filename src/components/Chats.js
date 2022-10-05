@@ -23,12 +23,12 @@ function Chats(props) {
 	}
 	return (
 		<div className='chats'>
-			{Object.entries(chats)?.sort((a,b)=> b[1].date - a[1].date).map(item =>
+			{Object.entries(chats??[])?.sort((a,b)=> b[1].date - a[1].date).map(item =>
 				<div className='userChat' key={item[0]} onClick={() => handleSelect(item[1].userInfo)}>
 					<img src={item[1].userInfo.photoURL} alt='' />
 					<div className='userChatInfo'>
 						<span>{item[1].userInfo.displayName}</span>
-						<p>{item[1].userInfo.lastMessage}</p>
+						<p>{item[1].lastMessage?.text}</p>
 					</div>
 				</div>)}
 

@@ -17,7 +17,7 @@ function Message({ message }) {
 	return (
 		<div ref={ref} className={`message ${isOwner() && 'owner'}`}>
 			<div className='messageInfo'>
-				<img src={isOwner ? currentUser.photoURL : data.user.photoURL} alt='' />
+				<img src={isOwner() ? currentUser.photoURL : data.user.photoURL} alt='' />
 				<span>Just now</span>
 			</div>
 			<div className='messageContent'>
